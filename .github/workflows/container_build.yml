@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: dockerbb
-      REGISTRY: ghcr.io/marco-cefetmg
+      REGISTRY: ghcr.io/
     steps:
 
       - name: Clone the repository
