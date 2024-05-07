@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: dockerbb
-      REGISTRY: ghcr.io/${{ steps.lower-repo.outputs.repository }}:latest
+      REGISTRY: ghcr.io/marco-cefetmg/dockerbb:latest
     steps:
 
       - name: Clone the repository
