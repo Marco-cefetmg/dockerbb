@@ -1,6 +1,10 @@
 IMG=juliohm/dockerbb:3.10-beta
 
-DOCKERCMD=sudo docker
+ifeq ($(shell command -v podman 2> /dev/null),)
+	DOCKERCMD=sudo docker
+else
+	DOCKERCMD=sudo podman
+endif
 
 .PHONY: docs
 
@@ -11,7 +15,7 @@ ifeq ($(shell uname),Darwin)
 endif
 
 build:
-	$(DOCKERCMD) build -t dockerbb .
+	$(DOCKERCMD) build --cap-add=CAP_AUDIT_WRITE -t dockerbb .
 
 push: build
 	$(DOCKERCMD) tag dockerbb $(IMG)
