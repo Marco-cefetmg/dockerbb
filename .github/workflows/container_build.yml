@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: dockerbb
-      REGISTRY: ghcr.io/${{ github.actor }}
+      REGISTRY: ghcr.io/${{ github.repository }}
     steps:
 
       - name: Clone the repository
